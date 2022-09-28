@@ -1,35 +1,58 @@
 
-const anime =  [
+const gameArray =  [
     {   
-        name: 'Attack on Titan', 
-        description: 'It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans '
+        id: 1,
+        name: 'Uncharted 4', 
+        description: ' '
+    },
+    {   
+        id: 2,
+        name: 'World of Warcraft', 
+        description: ' ' 
+    },
+    {   
+        id: 3,
+        name: 'God of War', 
+        description: ''
+    },
+    {   
+        id: 4,
+        name: 'Modern Warfare 2', 
+        description: ''
         
     },
     {   
-        name: 'Attack on Titan', 
-        description: 'It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans '
-        
+        id: 5,
+        name: 'Assasins Creed: Black Flag', 
+        description: ''
+    },
+
+    {   
+        id: 6,
+        name: '', 
+        description: ''
     },
     {   
-        name: 'Attack on Titan', 
-        description: 'It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans '
-        
+        id: 7,
+        name: 'GTA 5', 
+        description: ''
     },
     {   
-        name: 'Attack on Titan', 
-        description: 'It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans '
-        
+        id: 8,
+        name: 'Mario', 
+        description: ''
     },
     {   
-        name: 'Attack on Titan', 
-        description: 'It is set in a world where humanity is forced to live in cities surrounded by three enormous walls that protect them from gigantic man-eating humanoids referred to as Titans '
-        
+        id: 9,
+        name: 'Ghosts of Tsushima ', 
+        description: ''
     },
-
-
-
-
-
-
-
+    {   
+        id: 10,
+        name: 'Dark Souls', 
+        description: ''
+    }
 ]
+
+
+module.exports = gameArray; 
