@@ -2,7 +2,11 @@ const searchButton = document.getElementById('search')
 const luckyButton = document.getElementById('lucky')
 const searchBar = document.getElementById('input')
 const resultList = document.getElementById('results')
-const main = document.querySelector(".main")
+
+
+
+const main = document.querySelector('.main')
+const back = document.getElementById('bkbutton')
 
 
 searchButton.addEventListener('click', handleSearch)
@@ -12,17 +16,19 @@ async function handleSearch(e){
     e.preventDefault();
     const gameData = await fetch(`http://localhost:3000/games`)
     const gameDataJson = await gameData.json();
-    console.log(gameDataJson[1]);
-    
-    main.innerHTML = " ";
 
-    // let li;
-    // gameDataJson.forEach(element => {
-    //     li = document.createElement('li')
-    //     li.textContent = element.name;
-    //     console.log(li.textContent);
-    //     resultList.appendChild(li)
-    // });
+    console.log(gameDataJson[0])
+    // main.innerHTML = ""
+    const backButton =  document.createElement('button');
+    backButton.textContent = "back"
+    back.appendChild(backButton)
+    let li;
+    gameDataJson.forEach(element => {
+        li = document.createElement('li')
+        li.textContent = element.name;
+        resultList.appendChild(li)
+    });
+
      
 }
 
