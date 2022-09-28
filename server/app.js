@@ -18,10 +18,23 @@ app.get('/games', (req, res) => {
 })
 
 
-app.get('/games/:id', (req, res) => {
-  console.log(gameArray)
-  res.send(gameArray);
-})
+
+app.get('/games/lucky', (req, res) => {
+  let randomGame = gameArray[Math.floor(Math.random()*gameArray.length)];
+  console.log(randomGame)
+  res.send(randomGame);
+ })
+
+
+
+
+
+
+
+
+
+
+
 
 
 
