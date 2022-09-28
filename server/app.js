@@ -25,7 +25,12 @@ app.get('/games/lucky', (req, res) => {
   res.send(randomGame);
  })
 
-
+ app.get('/games/:name', (req, res) => {
+  const name = +req.params.name
+  const game = gameArray.filter(ele => ele.name == name);
+  console.log(game)
+  res.status(200).send(game);
+ })
 
 
 

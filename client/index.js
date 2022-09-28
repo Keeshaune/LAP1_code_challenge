@@ -11,11 +11,11 @@ luckyButton.addEventListener('click', handleLucky)
 async function handleSearch(e){
     e.preventDefault();
     clearList()
-    const gameData = await fetch(`http://localhost:3000/games`)
-    const gameDataJson = await gameData.json();
-    gameDataJson.forEach(element => {
-        createCard(element)
-    });
+    if (searchBar.value == "") {
+        handleNoName()
+    } else {
+        handleName(searchBar.value)
+    }
 }
 
 async function handleLucky(e) {
@@ -24,6 +24,22 @@ async function handleLucky(e) {
     const randomData = await fetch(`http://localhost:3000/games/lucky`)
     randomDataJson = await randomData.json();
     createCard(randomDataJson)
+}
+
+async function handleNoName() {
+    const gameData = await fetch(`http://localhost:3000/games`)
+    const gameDataJson = await gameData.json();
+    gameDataJson.forEach(element => {
+        createCard(element)
+    });
+}
+
+async function handleName(input) {
+    const gameData = await fetch(`http://localhost:3000/games/${input}`)
+    const gameDataJson = await gameData.json();
+    gameDataJson.forEach(element => {
+        createCard(element)
+    });
 }
 
 function test () {
