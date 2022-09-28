@@ -18,17 +18,10 @@ app.get('/games', (req, res) => {
 })
 
 
-app.get('/games/id', (req, res) => {
+app.get('/games/:id', (req, res) => {
   console.log(gameArray)
   res.send(gameArray);
 })
-
-
-
-
-
-
-
 
 
 
