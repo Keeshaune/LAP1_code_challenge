@@ -101,6 +101,7 @@ section .main .buttons button {
     border-radius: 4px;
     border: 1px solid transparent;
     outline: none;
+    text-decoration: none;
 }
 
 section .main .buttons button:hover {
