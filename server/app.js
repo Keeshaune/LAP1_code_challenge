@@ -26,13 +26,13 @@ app.get('/games/lucky', (req, res) => {
  })
 
  app.get('/games/:name', (req, res) => {
-  const name = +req.params.name
-  const game = gameArray.filter(ele => ele.name == name);
+  const name = req.params.name
+  const game = gameArray.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()));
   console.log(game)
   res.status(200).send(game);
  })
 
-
+//  ele.name.toLowerCase() == name.toLowerCase()
 
 
 
