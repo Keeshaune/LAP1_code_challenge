@@ -18,14 +18,6 @@ async function handleSearch(e){
     }
 }
 
-async function handleLucky(e) {
-    e.preventDefault();
-    clearList()
-    const randomData = await fetch(`http://localhost:3000/games/lucky`)
-    randomDataJson = await randomData.json();
-    createCard(randomDataJson)
-}
-
 async function handleNoName() {
     const gameData = await fetch(`http://localhost:3000/games`)
     const gameDataJson = await gameData.json();
@@ -40,6 +32,14 @@ async function handleName(input) {
     gameDataJson.forEach(element => {
         createCard(element)
     });
+}
+
+async function handleLucky(e) {
+    e.preventDefault();
+    clearList()
+    const randomData = await fetch(`http://localhost:3000/games/lucky`)
+    randomDataJson = await randomData.json();
+    createCard(randomDataJson)
 }
 
 function test () {

@@ -13,22 +13,17 @@ const gameArray = require('./data');
 app.get('/', (req, res) => res.send('it works'));
 
 app.get('/games', (req, res) => {
-  console.log(gameArray)
   res.send(gameArray);
 })
 
-
-
 app.get('/games/lucky', (req, res) => {
   let randomGame = gameArray[Math.floor(Math.random()*gameArray.length)];
-  console.log(randomGame)
   res.send(randomGame);
  })
 
  app.get('/games/:name', (req, res) => {
   const name = req.params.name
   const game = gameArray.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()));
-  console.log(game)
   res.status(200).send(game);
  })
 
