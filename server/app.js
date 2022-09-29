@@ -7,7 +7,9 @@ app.use(cors());
 
 const gameArray = require('./data');
 
-app.get('/', (req, res) => res.send('it works'));
+app.get('/', (req, res) => {
+  res.status(200).send('hello');
+});
 
 app.get('/games', (req, res) => {
   res.send(gameArray);
@@ -18,12 +20,15 @@ app.get('/games/lucky', (req, res) => {
   res.send(randomGame);
  })
 
- app.get('/games/:name', (req, res) => {
-  const name = req.params.name
-  const game = gameArray.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()));
+ app.get('/games/:name',  (req, res) => {
+
+  const name =  req.params.name
+  const game =  gameArray.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()));
   res.status(200).send(game);
  })
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
+
+  module.exports = app;
