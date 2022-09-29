@@ -42,17 +42,9 @@ async function handleLucky(e) {
     createCard(randomDataJson)
 }
 
-function test () {
-    console.log('hello')
-}
-
-function clearList() {
-    resultList.innerHTML = ""
-}
-
 function createCard(input) {
     resultList.innerHTML += `
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 50rem;">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><strong>name:</strong> ${input.name}</li>
                 <li class="list-group-item"><strong>genre:</strong> ${input.genre}</li>
@@ -61,4 +53,12 @@ function createCard(input) {
         </div>
         <br>
         `
+}
+
+function test () {
+    console.log('hello')
+}
+
+function clearList() {
+    resultList.innerHTML = ""
 }

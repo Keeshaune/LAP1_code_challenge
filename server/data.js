@@ -63,5 +63,4 @@ const gameArray =  [
     }
 ]
 
-
 module.exports = gameArray; 
