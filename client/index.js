@@ -2,7 +2,6 @@ const searchButton = document.getElementById('search')
 const luckyButton = document.getElementById('lucky')
 const searchBar = document.getElementById('input')
 const resultList = document.getElementById('results')
-
 const main = document.querySelector('.main')
 
 searchButton.addEventListener('click', handleSearch)
@@ -39,14 +38,14 @@ async function handleLucky(e) {
     clearList()
     const randomData = await fetch(`http://localhost:3000/games/lucky`)
     randomDataJson = await randomData.json();
-    createCard(randomDataJson)
+    location.href = randomDataJson.link
 }
 
 function createCard(input) {
     resultList.innerHTML += `
         <div class="card" style="width: 50rem;">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><strong>name:</strong> ${input.name}</li>
+                <li class="list-group-item"><strong>name:</strong> <a href="${input.link}">${input.name}</a></li>
                 <li class="list-group-item"><strong>genre:</strong> ${input.genre}</li>
                 <li class="list-group-item"><strong>description:</strong> ${input.description}</li>
             </ul>
