@@ -10,14 +10,14 @@ luckyButton.addEventListener('click', handleLucky)
 async function handleSearch(e){
     e.preventDefault();
     clearList()
-    if (searchBar.value == "") {
-        handleNoName()
+    if (searchBar.value == "games") {
+        handleAll()
     } else {
         handleName(searchBar.value)
     }
 }
 
-async function handleNoName() {
+async function handleAll() {
     const gameData = await fetch(`http://localhost:3000/games`)
     const gameDataJson = await gameData.json();
     gameDataJson.forEach(element => {
