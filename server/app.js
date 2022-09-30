@@ -7,20 +7,20 @@ app.use(cors());
 
 const gameArray = require('./data');
 
-app.get('/', (req, res) => res.send('it works'));
+app.get('/', (req, res) => res.status(200).send('it works'));
 
 app.get('/games', (req, res) => {
-  res.send(gameArray);
+  res.status(200).send(gameArray);
 })
 
 app.get('/games/lucky', (req, res) => {
   let randomGame = gameArray[Math.floor(Math.random()*gameArray.length)];
-  res.send(randomGame);
+  res.status(200).send(randomGame);
  })
 
  app.get('/games/:name', (req, res) => {
-  const name = req.params.name
-  const game = gameArray.filter(ele => ele.name.toLowerCase().includes(name.toLowerCase()));
+  const name = req.params.name.toLowerCase()
+  const game = gameArray.filter(ele => ele.name.toLowerCase().includes(name));
   res.status(200).send(game);
  })
 

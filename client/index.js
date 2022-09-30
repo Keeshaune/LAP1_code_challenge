@@ -2,7 +2,6 @@ const searchButton = document.getElementById('search')
 const luckyButton = document.getElementById('lucky')
 const searchBar = document.getElementById('input')
 const resultList = document.getElementById('results')
-const main = document.querySelector('.main')
 
 searchButton.addEventListener('click', handleSearch)
 luckyButton.addEventListener('click', handleLucky)
@@ -52,10 +51,6 @@ function createCard(input) {
         </div>
         <br>
         `
-}
-
-function test () {
-    console.log('hello')
 }
 
 function clearList() {
