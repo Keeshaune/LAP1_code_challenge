@@ -12,11 +12,7 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "jest --silent --watchAll",
-=======
-    "test": "jest --watchAll",
->>>>>>> fbe1086e85e7a89332502ca18d433f8ab3453101
     "dev": "nodemon app.js"
   },
   "author": "",
