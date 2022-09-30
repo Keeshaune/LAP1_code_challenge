@@ -7,7 +7,9 @@ app.use(cors());
 
 const gameArray = require('./data');
 
-app.get('/', (req, res) => res.status(200).send('it works'));
+app.get('/', (req, res) => {
+  res.status(200).send('hello');
+});
 
 app.get('/games', (req, res) => {
   res.status(200).send(gameArray);
@@ -27,3 +29,5 @@ app.get('/games/lucky', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
+
+  module.exports = app;
